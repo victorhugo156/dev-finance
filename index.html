@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./">
+    <link rel="stylesheet" href="_reset.css">
+    <link rel="stylesheet" href="_variaveis.css">
+    <link rel="stylesheet" href="./script.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Dev Finance</title>
+</head>
+
+<body id="body">
+
+    <header id="container--header">
+        <img src="./assests/logo.svg" alt="logo devfinance" id="logo">
+    </header>
+
+    <main class="container--main">
+        <section class="balance">
+            <h2 id="titles" class="sr--only">BalaNCE</h2>
+
+            <div class="card">
+                <h3>
+                    <span>Income</span>
+                    <img src="./assests/income.svg" alt="imagem de Entradas">
+
+                </h3>
+                <p id="incomeDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>Expenses</span>
+                    <img src="./assests/expense.svg" alt="Imagem de Saida">
+                </h3>
+                <p id="expensesDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./assests/total.svg" alt="Imagem total">
+                </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="transaction">
+
+            <h2 class="sr--only">Transactions</h2>
+            <a href="#" 
+            onclick="modal.open()"
+            class="button new">+ New Transaction</a>
+
+
+            <table class="data--table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h1>New Transaction</h1>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label for="description" class="sr--only"></label>
+                        <input type="text" id="description" name="description" value="" placeholder="Description" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="amount" class="sr--only"></label>
+                        <input type="number" step="0.01" id="amount" name="amount" value="" placeholder="0,00" />
+                        <small class="help">Use the - (negative) for expenses, (comma) for decimal numbers</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="description" class="sr--only"></label>
+                        <input type="date" id="date" name="date"
+                        value = ""
+                        placeholder=" Date" />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" 
+                        onclick="modal.close()"
+                        class=" button cancelar">Cancel</a>
+                        <button type="submit"> Send</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container--footer">
+        <div>
+            <p>dev.finance$</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
